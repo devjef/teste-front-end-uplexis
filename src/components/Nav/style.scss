@@ -38,12 +38,14 @@
             color: $secondary-color;
             height: 20px;
             width: 20px;
+            pointer-events: none;
         }
 
         .nav__text {
             color: $secondary-color;
             margin-bottom: 0;
             font-size: 14px;
+            pointer-events: none;
         }
     }
     

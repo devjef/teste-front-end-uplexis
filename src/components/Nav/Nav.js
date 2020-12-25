@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavCard from '../../components/NavCard'
 
 import { ReactComponent as Globe } from '../../assets/svg/globe-solid.svg';
@@ -15,6 +15,7 @@ import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 import './style.scss';
 
 function Nav() {
+
 
     const [navActive, setNavActive] = useState('');
     const [navItems, setNavItems] = useState([
@@ -87,9 +88,10 @@ function Nav() {
         }
 
         const index = e.target.getAttribute('index');
-        navItems[index].active = true;
 
-        setNavActive(index);
+        const novoEstado = {...navItems};
+        novoEstado[index].active = true;
+        setNavActive(novoEstado);
 
     }
 

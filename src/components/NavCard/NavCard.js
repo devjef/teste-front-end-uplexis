@@ -8,7 +8,7 @@ function NavCard({ icon, text, categoria, onClick, active, index }) {
 
     return(
         <div className={`nav__item ${active}`} index={index} id={categoria} onClick={handleClick}>
-                {icon}
+               {icon}
                 <p className="nav__text">{text}</p>
         </div>
     )
