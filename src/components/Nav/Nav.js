@@ -17,7 +17,7 @@ import './style.scss';
 function Nav() {
 
     const [navItems, setNavItems] = useState([
-        {   
+        {
             icon: <Globe className="nav__icon" />,
             text: 'Todos',
             categoria: 'todos',
@@ -27,63 +27,59 @@ function Nav() {
             icon: <Briefcase className="nav__icon" />,
             text: 'Profissional',
             categoria: 'profissional',
-            active: false
         },
         {   
             icon: <University className="nav__icon" />,
             text: 'Reguladores',
             categoria: 'reguladores',
-            active: false
         },
         {   
             icon: <TreeIcon className="nav__icon" />,
             text: 'Sócio ambiental',
             categoria: 'socioAmbiental',
-            active: false
         },
         {   
             icon: <Gavel className="nav__icon" />,
             text: 'Jurídico',
             categoria: 'juridico',
-            active: false
         },
         {   
             icon: <Ban className="nav__icon" />,
             text: 'Listas Restritivas',
             categoria: 'listasRestritivas',
-            active: false
         },
         {   
             icon: <GlobeAmericas className="nav__icon" />,
             text: 'Mídia / Internet',
             categoria: 'midiaInternet',
-            active: false
         },
         {   
             icon: <Gem className="nav__icon" />,
             text: 'Bens e Imóveis',
             categoria: 'bensEimoveis',
-            active: false
         },
         {   
             icon: <Male className="nav__icon" />,
             text: 'Cadastro',
             categoria: 'cadastro',
-            active: false
         },
         {   
             icon: <Piggy className="nav__icon" />,
             text: 'Financeiro',
             categoria: 'financeiro',
-            active: false
         }
     ]);
+
+    function handleClickNavCard(e) {
+
+        console.log(e.target);
+    }
 
     return (
         <div className="nav">
             {
                 navItems.map((item, index) => {
-                    return <NavCard key={index} icon={item.icon} text={item.text} categoria={item.categoria} active={item.active ? 'active' : ''} />
+                    return <NavCard key={index} icon={item.icon} text={item.text} categoria={item.categoria} onClick={(e) => handleClickNavCard(e)} active={item.active ? 'nav__item--active' : ''} />
                 })
             }
 
