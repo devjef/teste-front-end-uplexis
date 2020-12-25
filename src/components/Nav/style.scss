@@ -1,0 +1,62 @@
+@import '../../assets/scss/helpers/variaveis.scss';
+
+.nav {
+
+    align-items: center;    
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+
+    .nav__item {
+
+        background-color: $white-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+        border: 1px solid #fff;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+
+        &:nth-child(1) {
+            border-radius: 8px 0 0 8px;
+        }
+
+        &:nth-child(10) {
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .nav__icon {
+            color: $secondary-color;
+            height: 20px;
+            width: 20px;
+        }
+
+        .nav__text {
+            color: $secondary-color;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    }
+    
+    .nav__item--active {
+        background-color: $primary-color;
+        padding: 1.1rem;
+        border: 1px solid $primary-color;
+        border-radius: 8px !important;
+        width: 125px;
+        height: 125px;
+
+        .nav__icon {
+            color: $white-color;
+        }
+
+        .nav__text {
+            color: $white-color;
+        }
+    }
+}
