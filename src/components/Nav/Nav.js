@@ -16,6 +16,7 @@ import './style.scss';
 
 function Nav() {
 
+    const [navActive, setNavActive] = useState('');
     const [navItems, setNavItems] = useState([
         {
             icon: <Globe className="nav__icon" />,
@@ -23,55 +24,55 @@ function Nav() {
             categoria: 'todos',
             active: true
         },
-        {   
+        {
             icon: <Briefcase className="nav__icon" />,
             text: 'Profissional',
             categoria: 'profissional',
             active: false
         },
-        {   
+        {
             icon: <University className="nav__icon" />,
             text: 'Reguladores',
             categoria: 'reguladores',
             active: false
         },
-        {   
+        {
             icon: <TreeIcon className="nav__icon" />,
             text: 'Sócio ambiental',
             categoria: 'socioAmbiental',
             active: false
         },
-        {   
+        {
             icon: <Gavel className="nav__icon" />,
             text: 'Jurídico',
             categoria: 'juridico',
             active: false
         },
-        {   
+        {
             icon: <Ban className="nav__icon" />,
             text: 'Listas Restritivas',
             categoria: 'listasRestritivas',
             active: false
         },
-        {   
+        {
             icon: <GlobeAmericas className="nav__icon" />,
             text: 'Mídia / Internet',
             categoria: 'midiaInternet',
             active: false
         },
-        {   
+        {
             icon: <Gem className="nav__icon" />,
             text: 'Bens e Imóveis',
             categoria: 'bensEimoveis',
             active: false
         },
-        {   
+        {
             icon: <Male className="nav__icon" />,
             text: 'Cadastro',
             categoria: 'cadastro',
             active: false
         },
-        {   
+        {
             icon: <Piggy className="nav__icon" />,
             text: 'Financeiro',
             categoria: 'financeiro',
@@ -81,7 +82,14 @@ function Nav() {
 
     function handleClickNavCard(e) {
 
-        console.log(e.target)
+        for(let i = 0; i < navItems.length; i++) {
+            navItems[i].active = false;
+        }
+
+        const index = e.target.getAttribute('index');
+        navItems[index].active = true;
+
+        setNavActive(index);
 
     }
 
@@ -89,7 +97,7 @@ function Nav() {
         <div className="nav">
             {
                 navItems.map((item, index) => {
-                    return <NavCard key={index} icon={item.icon} text={item.text} categoria={item.categoria} active={item.active ? 'nav__item--active' : '' } onClick={handleClickNavCard} />
+                    return <NavCard key={index} index={index} icon={item.icon} text={item.text} categoria={item.categoria} active={item.active ? 'nav__item--active' : ''} onClick={handleClickNavCard} />
                 })
             }
 
