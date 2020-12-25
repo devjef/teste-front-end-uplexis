@@ -1,6 +1,10 @@
+import { BannerPrincipal, BannerSecundario } from './components/Banners'
+
 function App() {
   return (
-    <h1 className="test">Teste</h1>
+    <>
+     <BannerPrincipal />
+    </>
   );
 }
 
