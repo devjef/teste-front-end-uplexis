@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function NavCard({ icon, text, categoria, onClick, active }) {
 
