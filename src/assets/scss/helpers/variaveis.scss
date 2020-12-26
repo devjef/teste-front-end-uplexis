@@ -1,6 +1,6 @@
 $primary-color: darken(#f26f14, 0);
 $secondary-color: lighten(#696969, 0);
-$white-color: #f9f9f9;
+$grey-color: #f1f1f1;
 
-$mq-mobile: '(min-width: 480px)';
-$mq-desktop: '(min-width: 1200px)';
+$mq-mobile: '(max-width: 480px)';
+$mq-desktop: '(max-width: 1200px)';

@@ -1,11 +1,17 @@
-import { BannerPrincipal, BannerSecundario } from './components/Banners'
-import Nav from './components/Nav';
+import { BannerPrincipal } from './components/Banners'
+import NavMenu from './components/NavMenu';
+import Products from './components/Products';
 
 function App() {
   return (
     <>
      <BannerPrincipal />
-     <Nav />
+     
+     <div className="container">
+      <NavMenu />
+      <Products />
+     </div>
+    
     </>
   );
 }

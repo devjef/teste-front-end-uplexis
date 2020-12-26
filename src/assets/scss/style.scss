@@ -1,4 +1,14 @@
 @import './normalize.scss';
 @import './reset.scss';
 @import '../../components/Banners/style.scss';
-@import '../../components/Nav/style.scss';
+@import '../../components/NavMenu/style.scss';
+@import '../../components/Products/style.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 5rem;
+};
+
