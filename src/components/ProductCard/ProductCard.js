@@ -10,9 +10,9 @@ function ProductCard({ icon, title, text, price }) {
             </div>
             <div className="products__footer">
                 <p className="products__price">{price}</p>
-                <p className="products__link">
-                    <a href="/saiba-mais">Saiba mais</a>
-                </p>
+                <a href="/saiba-mais">
+                    <p className="products__link">Saiba mais</p>
+                </a>
             </div>
         </div>
     )

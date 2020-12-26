@@ -4,19 +4,29 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
-import Home from './components/Home/index';
-import SaibaMais from './components/SaibaMais/index';
+import { BannerPrincipal, BannerSecundario } from './components/Banners'
+import NavMenu from './components/NavMenu';
+import Products from './components/Products';
 
 function App() {
   return (
     <Router>
       <Switch>
+
         <Route path="/" exact>
-          <Home />
+          <Link to="/saiba-mais">
+            <BannerPrincipal />
+          </Link>
+          <div className="container">
+            <NavMenu />
+            <Products />
+          </div>
         </Route>
+
         <Route path="/saiba-mais">
-          <SaibaMais />
+          <Link to="/">
+            <BannerSecundario />
+          </Link>
         </Route>
       </Switch>
     </Router>
