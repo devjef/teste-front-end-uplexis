@@ -2,7 +2,10 @@
 @import './reset.scss';
 @import '../../components/Banners/style.scss';
 @import '../../components/NavMenu/style.scss';
+@import '../../components/NavCard/style.scss';
 @import '../../components/Products/style.scss';
+@import '../../components/SelectOrder/style.scss';
+@import '../../components/ProductCard/style.scss';
 
 .container {
     display: flex;

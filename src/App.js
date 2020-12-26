@@ -2,6 +2,7 @@ import { BannerPrincipal } from './components/Banners'
 import NavMenu from './components/NavMenu';
 import Products from './components/Products';
 
+
 function App() {
   return (
     <>
@@ -11,7 +12,6 @@ function App() {
       <NavMenu />
       <Products />
      </div>
-    
     </>
   );
 }

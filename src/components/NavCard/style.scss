@@ -1,0 +1,67 @@
+@import '../../assets/scss/helpers/variaveis.scss';
+
+.nav__item {
+
+    background-color: $grey-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #fff;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:nth-child(1) {
+        border-radius: 5px 0 0 5px;
+    }
+
+    &:nth-child(10) {
+        border-radius: 0 5px 5px 0;
+    }
+    
+    .nav__icon {
+        color: $secondary-color;
+        height: 20px;
+        width: 20px;
+        pointer-events: none;
+    }
+
+    .nav__text {
+        color: $secondary-color;
+        margin-bottom: 0;
+        font-size: 14px;
+        pointer-events: none;
+    }
+}
+
+.nav__item--active {
+    background-color: $primary-color;
+    padding: 1.1rem;
+    border: 1px solid $primary-color;
+    border-radius: 5px !important;
+   
+
+    .nav__icon {
+        color: $grey-color;
+    }
+
+    .nav__text {
+        color: $grey-color;
+    }
+}
+@media #{$mq-mobile} {
+
+    .nav__item {
+
+        .nav__icon {
+            display: none;
+        }
+    }
+   
+}

@@ -12,70 +12,68 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-import './style.scss';
-
 function NavMenu() {
 
     const [navActive, setNavActive] = useState('');
     const [navItems, setNavItems] = useState([
         {
             icon: <Globe className="nav__icon" />,
-            text: 'Todos',
-            categoria: 'todos',
+            title: 'Todos',
+            category: 'todos',
             active: true
         },
         {
             icon: <Briefcase className="nav__icon" />,
-            text: 'Profissional',
-            categoria: 'profissional',
+            title: 'Profissional',
+            category: 'profissional',
             active: false
         },
         {
             icon: <University className="nav__icon" />,
-            text: 'Reguladores',
-            categoria: 'reguladores',
+            title: 'Reguladores',
+            category: 'reguladores',
             active: false
         },
         {
             icon: <TreeIcon className="nav__icon" />,
-            text: 'Sócio ambiental',
-            categoria: 'socioAmbiental',
+            title: 'Sócio ambiental',
+            category: 'socioAmbiental',
             active: false
         },
         {
             icon: <Gavel className="nav__icon" />,
-            text: 'Jurídico',
-            categoria: 'juridico',
+            title: 'Jurídico',
+            category: 'juridico',
             active: false
         },
         {
             icon: <Ban className="nav__icon" />,
-            text: 'Listas Restritivas',
-            categoria: 'listasRestritivas',
+            title: 'Listas Restritivas',
+            category: 'listasRestritivas',
             active: false
         },
         {
             icon: <GlobeAmericas className="nav__icon" />,
-            text: 'Mídia / Internet',
-            categoria: 'midiaInternet',
+            title: 'Mídia / Internet',
+            category: 'midiaInternet',
             active: false
         },
         {
             icon: <Gem className="nav__icon" />,
-            text: 'Bens e Imóveis',
-            categoria: 'bensEimoveis',
+            title: 'Bens e Imóveis',
+            category: 'bensEimoveis',
             active: false
         },
         {
             icon: <Male className="nav__icon" />,
-            text: 'Cadastro',
-            categoria: 'cadastro',
+            title: 'Cadastro',
+            category: 'cadastro',
             active: false
         },
         {
             icon: <Piggy className="nav__icon" />,
-            text: 'Financeiro',
-            categoria: 'financeiro',
+            title: 'Financeiro',
+            category: 'financeiro',
             active: false
         }
     ]);
@@ -98,7 +96,7 @@ function NavMenu() {
         <div className="nav">
             {
                 navItems.map((item, index) => {
-                    return <NavCard key={index} index={index} icon={item.icon} text={item.text} categoria={item.categoria} active={item.active ? 'nav__item--active' : ''} onClick={handleClickNavCard} />
+                    return <NavCard key={index} index={index} icon={item.icon} title={item.title} category={item.category} active={item.active ? 'nav__item--active' : ''} onClick={handleClickNavCard} />
                 })
             }
 
