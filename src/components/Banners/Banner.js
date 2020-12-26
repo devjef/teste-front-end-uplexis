@@ -6,13 +6,17 @@ const altBanner = "Banner UpMiner Histórico Empresarial";
 
 function BannerPrincipal() {
     return(
-        <img src={banner1} alt={altBanner} className="banner" />
+        <a href="/saiba-mais">
+            <img src={banner1} alt={altBanner} className="banner" />
+        </a>
     )
 };
 
 function BannerSecundario() {
     return(
-        <img src={banner2} alt={altBanner} className="banner" />
+        <a href="/">
+            <img src={banner2} alt={altBanner} className="banner" />
+        </a>
     )
 }
 

@@ -1,18 +1,25 @@
-import { BannerPrincipal } from './components/Banners'
-import NavMenu from './components/NavMenu';
-import Products from './components/Products';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+import Home from './components/Home/index';
+import SaibaMais from './components/SaibaMais/index';
 
 function App() {
   return (
-    <>
-     <BannerPrincipal />
-     
-     <div className="container">
-      <NavMenu />
-      <Products />
-     </div>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/saiba-mais">
+          <SaibaMais />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
