@@ -99,14 +99,7 @@ function Products() {
             price: 'R$ 29,99',
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
             category: 'Financeiro'
-        },
-        {
-            icon: <Gavel className="products__icon" />,
-            title: 'Jurídico',
-            price: 'R$ 29,99',
-            text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
-            category: 'juridico'
-        },
+        }
     ])
 
     useEffect(() => {
