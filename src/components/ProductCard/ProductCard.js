@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCard({ icon, title, text, price }) {
     return (
@@ -10,9 +11,7 @@ function ProductCard({ icon, title, text, price }) {
             </div>
             <div className="products__footer">
                 <p className="products__price">{price}</p>
-                <a href="/saiba-mais">
-                    <p className="products__link">Saiba mais</p>
-                </a>
+                <Link to="/saiba-mais"><p className="products__link">Saiba mais</p></Link>
             </div>
         </div>
     )
