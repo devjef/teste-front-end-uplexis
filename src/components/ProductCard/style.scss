@@ -1,4 +1,5 @@
-@import "../../assets/scss/helpers/variaveis.scss";
+@import "../../assets/scss/helpers/variables.scss";
+@import "../../assets/scss/helpers/mixin.scss";
 
 .products__card {
     display: flex;
@@ -44,8 +45,7 @@
         justify-content: space-between;
         padding: 10px;
         position: absolute;
-        background-color: $primary-color; /* For browsers that do not support gradients */
-        background-image: linear-gradient(to right, #fa8f43, $primary-color);
+        @include btn-background;
         width: 100%;
         height: 50px;
         bottom: 0;

@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+@mixin btn-background {
+    background-color: $primary-color;
+    background-image: $background-primary;
+};

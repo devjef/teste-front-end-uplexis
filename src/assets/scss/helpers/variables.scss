@@ -1,6 +1,7 @@
 $primary-color: darken(#f26f14, 0);
 $secondary-color: lighten(#696969, 0);
 $grey-color: #f1f1f1;
+$background-primary: linear-gradient(to right, #fa8f43, $primary-color);
 
 $mq-mobile: '(max-width: 480px)';
 $mq-desktop: '(max-width: 1200px)';

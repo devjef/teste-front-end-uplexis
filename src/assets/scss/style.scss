@@ -6,12 +6,10 @@
 @import '../../components/Products/style.scss';
 @import '../../components/SelectOrder/style.scss';
 @import '../../components/ProductCard/style.scss';
+@import '../../components/ImageCarousel/style.scss';
+@import '../../components/SaibaMais/style.scss';
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     margin: 0 10rem;
 };
 
