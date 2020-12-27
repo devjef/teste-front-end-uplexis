@@ -7,9 +7,7 @@ import ImageCarousel from '../ImageCarousel';
 function SaibaMais() {
     return (
         <>
-            <Link to="/" >
-                <BannerSecundario />
-            </Link>
+            <BannerSecundario />
             <div className="container">
                 <Link to="/" >
                     <div className="page-back">

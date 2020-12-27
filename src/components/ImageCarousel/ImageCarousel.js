@@ -9,7 +9,7 @@ function ImageCarousel() {
 
     return (
         <div className="carousel-image">
-            <Carousel infiniteLoop={true} autoPlay={true} showThumbs={false} transitionTime={150} showStatus={false} swipeable={true} emulateTouch={true}>
+            <Carousel infiniteLoop={true} autoPlay={true} showThumbs={false} showStatus={false} swipeable={true} emulateTouch={true} interval={2000}>
                 <div>
                     <img src={img1} />
                 </div>
