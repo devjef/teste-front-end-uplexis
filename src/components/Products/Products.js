@@ -14,9 +14,10 @@ import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
 function Products() {
 
-    const [order, setOrder] = useState('lancamentos');
+    const [order, setOrder] = useState('');
     const [products, setProducts] = useState([
         {
+            id: 1,
             icon: <Briefcase className="products__icon" />,
             title: 'Profissional',
             text: '',
@@ -24,6 +25,7 @@ function Products() {
             category: 'profissional'
         },
         {
+            id: 2,
             icon: <University className="products__icon" />,
             title: 'Reguladores',
             price: 'R$ 29,99',
@@ -31,6 +33,7 @@ function Products() {
             category: 'reguladores'
         },
         {
+            id: 3,
             icon: <TreeIcon className="products__icon" />,
             title: 'Sócio Ambiental',
             price: 'R$ 29,99',
@@ -38,6 +41,7 @@ function Products() {
             category: 'socioAmbiental'
         },
         {
+            id: 4,
             icon: <Gavel className="products__icon" />,
             title: 'Jurídico',
             price: 'R$ 29,99',
@@ -45,6 +49,7 @@ function Products() {
             category: 'juridico'
         },
         {
+            id: 5,
             icon: <Ban className="products__icon" />,
             title: 'Listas Restritivas',
             price: 'R$ 29,99',
@@ -52,6 +57,7 @@ function Products() {
             category: 'listasRestritivas'
         },
         {
+            id: 6,
             icon: <GlobeAmericas className="products__icon" />,
             title: 'Mídia / Internet',
             price: 'R$ 29,99',
@@ -59,6 +65,7 @@ function Products() {
             category: 'midiaInternet'
         },
         {
+            id: 7,
             icon: <Gem className="products__icon" />,
             title: 'Bens e Imóveis',
             price: 'R$ 29,99',
@@ -66,6 +73,7 @@ function Products() {
             category: 'bensEimoveis'
         },
         {
+            id: 8,
             icon: <Male className="products__icon" />,
             title: 'Cadastro',
             price: 'R$ 29,99',
@@ -73,6 +81,7 @@ function Products() {
             category: 'Cadastro'
         },
         {
+            id: 9,
             icon: <Piggy className="products__icon" />,
             title: 'Financeiro',
             price: 'R$ 29,99',
@@ -80,6 +89,7 @@ function Products() {
             category: 'Financeiro'
         },
         {
+            id: 10,
             icon: <Piggy className="products__icon" />,
             title: 'Financeiro',
             price: 'R$ 29,99',
@@ -87,6 +97,7 @@ function Products() {
             category: 'Financeiro'
         },
         {
+            id: 11,
             icon: <TreeIcon className="products__icon" />,
             title: 'Sócio Ambiental',
             price: 'R$ 29,99',
@@ -94,6 +105,7 @@ function Products() {
             category: 'socioAmbiental'
         },
         {
+            id: 12,
             icon: <Piggy className="products__icon" />,
             title: 'Financeiro',
             price: 'R$ 29,99',
@@ -104,19 +116,51 @@ function Products() {
 
     useEffect(() => {
         console.log(order)
+        console.log(products)
     });
 
     function handleChangeOrder(orderValue) {
-        setOrder(orderValue)
+
+        for (let i = 0; i < products.length; i++) {
+            if (orderValue == 'lancamentos') {
+                console.log(orderValue);
+                products.sort((a, b) => {
+                    if (a.id < b.id) {
+                        return -1
+                    };
+                    if (a.id > b.id) {
+                        return 1
+                    };
+
+                    return 0;
+                });
+                setOrder(orderValue);
+            } else {
+                console.log(orderValue);
+                products.sort((b, a) => {
+                    if (a.id < b.id) {
+                        return -1
+                    };
+                    if (a.id > b.id) {
+                        return 1
+                    };
+
+                    return 0;
+                });
+                setOrder(orderValue);
+            }
+        }
+
+
     };
 
     return (
         <>
             <SelectOrder handleChangeOrder={handleChangeOrder} />
             <div className="products" >
-               {products.map(product => {
-                   return <ProductCard icon={product.icon} title={product.title} text={product.text} price={product.price} />
-               })}
+                {products.map(product => {
+                    return <ProductCard icon={product.icon} title={product.title} text={product.text} price={product.price} />
+                })}
             </div>
         </>
     )
