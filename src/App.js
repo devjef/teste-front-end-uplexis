@@ -2,29 +2,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import { BannerPrincipal } from './components/Banners'
-import NavMenu from './components/NavMenu';
-import Products from './components/Products';
-import SaibaMais from './components/SaibaMais'
-
+import Home from './components/Home'
+import MoreInfo from './components/MoreInfo'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Link to="/saiba-mais">
-            <BannerPrincipal />
-          </Link>
-          <div className="container">
-            <NavMenu />
-            <Products />
-          </div>
+          <Home />
         </Route>
         <Route path="/saiba-mais">
-          <SaibaMais />
+          <MoreInfo />
         </Route>
       </Switch>
     </Router>
