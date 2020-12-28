@@ -127,7 +127,7 @@ function Products( {categoryActive }) {
     function orderProducts(orderValue) {
 
         for (let i = 0; i < products.length; i++) {
-            if (orderValue == 'lancamentos') {
+            if (orderValue === 'lancamentos') {
                 console.log(orderValue);
                 products.sort((a, b) => {
                     if (a.id < b.id) {
@@ -166,7 +166,7 @@ function Products( {categoryActive }) {
                     if(categoryActive === 'todos') {
                         return product
                     } else {
-                        return product.category == categoryActive
+                        return product.category === categoryActive
                     }
                     
                 }).map(product => {
