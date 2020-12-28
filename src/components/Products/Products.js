@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function Products() {
+function Products( {categoryActive }) {
 
     const [order, setOrder] = useState('');
     const [products, setProducts] = useState([
@@ -78,7 +78,7 @@ function Products() {
             title: 'Cadastro',
             price: 'R$ 29,99',
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
-            category: 'Cadastro'
+            category: 'cadastro'
         },
         {
             id: 9,
@@ -86,7 +86,7 @@ function Products() {
             title: 'Financeiro',
             price: 'R$ 29,99',
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
-            category: 'Financeiro'
+            category: 'financeiro'
         },
         {
             id: 10,
@@ -94,7 +94,7 @@ function Products() {
             title: 'Financeiro',
             price: 'R$ 29,99',
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
-            category: 'Financeiro'
+            category: 'financeiro'
         },
         {
             id: 11,
@@ -110,7 +110,7 @@ function Products() {
             title: 'Financeiro',
             price: 'R$ 29,99',
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
-            category: 'Financeiro'
+            category: 'financeiro'
         }
     ])
 
@@ -120,6 +120,11 @@ function Products() {
     });
 
     function handleChangeOrder(orderValue) {
+
+        orderProducts(orderValue);
+    };
+
+    function orderProducts(orderValue) {
 
         for (let i = 0; i < products.length; i++) {
             if (orderValue == 'lancamentos') {
@@ -150,15 +155,21 @@ function Products() {
                 setOrder(orderValue);
             }
         }
-
-
-    };
+    }
 
     return (
         <>
             <SelectOrder handleChangeOrder={handleChangeOrder} />
             <div className="products" >
-                {products.map(product => {
+                {products.filter(product => {
+
+                    if(categoryActive === 'todos') {
+                        return product
+                    } else {
+                        return product.category == categoryActive
+                    }
+                    
+                }).map(product => {
                     return <ProductCard icon={product.icon} title={product.title} text={product.text} price={product.price} />
                 })}
             </div>

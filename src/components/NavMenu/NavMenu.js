@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function NavMenu() {
+function NavMenu({ categoryFilter }) {
 
     const [navActive, setNavActive] = useState('');
     const [navItems, setNavItems] = useState([
@@ -79,7 +79,12 @@ function NavMenu() {
     ]);
 
     function handleClickNavCard(e) {
+        activeItem(e);
+        categoryFilter(e);
+    };
 
+    function activeItem(e) {
+        
         for(let i = 0; i < navItems.length; i++) {
             navItems[i].active = false;
         }
@@ -88,8 +93,8 @@ function NavMenu() {
 
         const novoEstado = {...navItems};
         novoEstado[index].active = true;
-        setNavActive(novoEstado);
 
+        setNavActive(novoEstado);
     };
 
     return (
