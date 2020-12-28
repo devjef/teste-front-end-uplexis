@@ -4,7 +4,7 @@ import { BannerSecundario } from '../Banners'
 import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
 import ImageCarousel from '../ImageCarousel';
 
-function MoreInfo() {
+function About() {
     return (
         <>
             <BannerSecundario />
@@ -39,4 +39,4 @@ function MoreInfo() {
     )
 };
 
-export default MoreInfo;
+export default About;

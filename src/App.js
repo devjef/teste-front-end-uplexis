@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './components/Home'
-import MoreInfo from './components/MoreInfo'
+import About from './components/About'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/saiba-mais">
-          <MoreInfo />
+          <About />
         </Route>
       </Switch>
     </Router>
