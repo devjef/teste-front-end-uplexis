@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function Products( {categoryActive }) {
+function Products({ categoryActive }) {
 
     const [order, setOrder] = useState('');
     const [products, setProducts] = useState([
@@ -126,34 +126,12 @@ function Products( {categoryActive }) {
 
     function orderProducts(orderValue) {
 
-        for (let i = 0; i < products.length; i++) {
-            if (orderValue === 'lancamentos') {
-                console.log(orderValue);
-                products.sort((a, b) => {
-                    if (a.id < b.id) {
-                        return -1
-                    };
-                    if (a.id > b.id) {
-                        return 1
-                    };
-
-                    return 0;
-                });
-                setOrder(orderValue);
-            } else {
-                console.log(orderValue);
-                products.sort((b, a) => {
-                    if (a.id < b.id) {
-                        return -1
-                    };
-                    if (a.id > b.id) {
-                        return 1
-                    };
-
-                    return 0;
-                });
-                setOrder(orderValue);
-            }
+        if (orderValue === 'lancamentos') {
+            products.sort((a, b) => (a.id > b.id ? 1 : -1))
+            setOrder(orderValue);
+        } else {
+            products.sort((a, b) => (a.id < b.id ? 1 : -1))
+            setOrder(orderValue);
         }
     }
 
@@ -163,12 +141,12 @@ function Products( {categoryActive }) {
             <div className="products" >
                 {products.filter(product => {
 
-                    if(categoryActive === 'todos') {
+                    if (categoryActive === 'todos') {
                         return product
                     } else {
                         return product.category === categoryActive
                     }
-                    
+
                 }).map(product => {
                     return <ProductCard icon={product.icon} title={product.title} text={product.text} price={product.price} />
                 })}

@@ -14,7 +14,6 @@ import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
 function NavMenu({ categoryFilter }) {
 
-    const [navActive, setNavActive] = useState('');
     const [navItems, setNavItems] = useState([
         {
             icon: <Globe className="nav__icon" />,
@@ -84,17 +83,13 @@ function NavMenu({ categoryFilter }) {
     };
 
     function activeItem(e) {
-        
-        for(let i = 0; i < navItems.length; i++) {
-            navItems[i].active = false;
-        }
+
+        navItems.forEach(item => item.active = false);
 
         const index = e.target.getAttribute('index');
+        navItems[index].active = true;
 
-        const novoEstado = {...navItems};
-        novoEstado[index].active = true;
-
-        setNavActive(novoEstado);
+        setNavItems(navItems);
     };
 
     return (
