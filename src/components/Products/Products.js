@@ -126,14 +126,14 @@ function Products({ categoryActive }) {
 
     function orderProducts(orderValue) {
 
-        if (orderValue === 'lancamentos') {
-            products.sort((a, b) => (a.id > b.id ? 1 : -1))
-            setOrder(orderValue);
-        } else {
-            products.sort((a, b) => (a.id < b.id ? 1 : -1))
-            setOrder(orderValue);
+        const ordenacao = {
+            'lancamentos': () => products.sort((a, b) => (a.id > b.id ? 1 : -1)),
+            'antigos': () => products.sort((a, b) => (a.id < b.id ? 1 : -1))
         }
-    }
+    
+        ordenacao[orderValue]();
+        setOrder(orderValue);
+    };
 
     return (
         <>
