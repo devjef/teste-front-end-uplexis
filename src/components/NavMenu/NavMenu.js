@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavCard from '../../components/NavCard'
+import NavCard from '../../components/NavCard';
 
 import { ReactComponent as Globe } from '../../assets/svg/globe-solid.svg';
 import { ReactComponent as Briefcase } from '../../assets/svg/briefcase-solid.svg';
@@ -101,7 +101,7 @@ function NavMenu({ categoryFilter }) {
             }
 
         </div>
-    )
-}
+    );
+};
 
 export default NavMenu;

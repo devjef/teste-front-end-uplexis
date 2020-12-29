@@ -1,7 +1,6 @@
 import React from 'react';
 
 function InfoAbout() {
-
     return (
         <>
             <div className="app-description">
@@ -22,7 +21,7 @@ function InfoAbout() {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default InfoAbout;

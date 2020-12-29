@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SelectOrder from '../SelectOrder';
 import ProductCard from '../ProductCard';
 
@@ -14,7 +14,7 @@ import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
 function Products({ categoryActive }) {
 
-    const [order, setOrder] = useState('');
+    const [order, setOrder] = useState('lancamentos');
     const [products, setProducts] = useState([
         {
             id: 1,
@@ -112,15 +112,9 @@ function Products({ categoryActive }) {
             text: 'O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.',
             category: 'financeiro'
         }
-    ])
-
-    useEffect(() => {
-        console.log(order)
-        console.log(products)
-    });
+    ]);
 
     function handleChangeOrder(orderValue) {
-
         orderProducts(orderValue);
     };
 
@@ -129,30 +123,24 @@ function Products({ categoryActive }) {
         const ordenacao = {
             'lancamentos': () => products.sort((a, b) => (a.id > b.id ? 1 : -1)),
             'antigos': () => products.sort((a, b) => (a.id < b.id ? 1 : -1))
-        }
-    
+        };
+
         ordenacao[orderValue]();
         setOrder(orderValue);
     };
 
     return (
         <>
-            <SelectOrder handleChangeOrder={handleChangeOrder} />
+            <SelectOrder handleChangeOrder={handleChangeOrder} orderValue={order} />
             <div className="products" >
-                {products.filter(product => {
-
-                    if (categoryActive === 'todos') {
-                        return product
-                    } else {
-                        return product.category === categoryActive
-                    }
-
-                }).map(product => {
-                    return <ProductCard icon={product.icon} title={product.title} text={product.text} price={product.price} />
-                })}
+                {
+                    products
+                        .filter(product => categoryActive === 'todos' ? product : product.category === categoryActive)
+                        .map((product, index) => <ProductCard key={index} icon={product.icon} title={product.title} text={product.text} price={product.price} />)
+                }
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Products;

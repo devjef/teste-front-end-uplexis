@@ -1,2 +1,2 @@
-import NavCard from './NavCard'
+import NavCard from './NavCard';
 export default NavCard;

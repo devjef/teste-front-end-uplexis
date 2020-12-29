@@ -7,13 +7,13 @@ const altBanner = "Banner UpMiner Histórico Empresarial";
 function BannerPrincipal() {
     return(
         <img src={banner1} alt={altBanner} className="banner" />
-    )
+    );
 };
 
 function BannerSecundario() {
     return(
         <img src={banner2} alt={altBanner} className="banner" />
-    )
-}
+    );
+};
 
 export { BannerPrincipal, BannerSecundario };

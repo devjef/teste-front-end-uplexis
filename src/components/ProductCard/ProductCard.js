@@ -14,7 +14,7 @@ function ProductCard({ icon, title, text, price }) {
                 <Link to="/saiba-mais"><p className="products__link">Saiba mais</p></Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ProductCard;

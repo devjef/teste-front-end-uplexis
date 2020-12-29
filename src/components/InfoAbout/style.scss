@@ -2,63 +2,61 @@
 @import "../../assets/scss/helpers/mixin.scss";
 
 .page-back {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 1rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem;
+  cursor: pointer;
 
-    .page-back__icon {
-        color: $primary-color;
-        margin-right: 0.3rem;
-        width: 15px;
-        height: 15px;
-    }
+  .page-back__icon {
+    color: $primary-color;
+    margin-right: 0.3rem;
+    width: 15px;
+    height: 15px;
+  }
 
-    .page-back__text {
-        color: $primary-color;
-        font-weight: normal;
-    }
+  .page-back__text {
+    color: $primary-color;
+    font-weight: normal;
+  }
 }
 
 .app-description {
-   
-    padding: 1rem;
+  padding: 1rem;
 
-    .app-description__text {
-        color: $secondary-color;
-    }
+  .app-description__text {
+    color: $secondary-color;
+  }
 }
 
 .content-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1rem;
+
+  .content-footer__price {
+    .content-footer__simbol {
+      font-size: 12px;
+      margin: 0.2rem;
+    }
+
+    font-size: 18px;
+  }
+
+  .content-footer__button {
+    padding: 1.1rem;
+    border-radius: 5px;
+    margin: 1rem;
+    width: auto;
+    height: 10px;
+    @include btn-background;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding: 0 1rem;
+    cursor: pointer;
 
-    .content-footer__price {
-
-        .content-footer__simbol {
-            font-size: 12px;
-            margin: 0.2rem;
-        };
-        
-        font-size: 18px;
+    .content-footer__text {
+      color: white;
     }
-
-    .content-footer__button {
-        padding: 1.1rem;
-        border-radius: 5px;
-        margin: 1rem;
-        width: auto;
-        height: 10px;
-        @include btn-background;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-
-        .content-footer__text {
-            color: white;
-        }
-    }
+  }
 }

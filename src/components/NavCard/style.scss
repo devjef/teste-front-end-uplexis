@@ -55,13 +55,31 @@
         color: $grey-color;
     }
 }
+
+@media #{$mq-desktop} {
+    .nav__item {
+        width: 25%;
+        max-width: 119px;
+    }
+}
+
 @media #{$mq-mobile} {
 
     .nav__item {
+        width: 50%;
+        min-width: 116px;
+        height: 20px;
+        margin: 5px;
+        border-radius: 5px;
 
         .nav__icon {
             display: none;
         }
+
+        .nav__text {
+            margin: 0;
+            white-space: nowrap;
+        }
     }
    
-}
+};

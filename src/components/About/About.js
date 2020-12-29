@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import { BannerSecundario } from '../Banners'
+import { Link } from 'react-router-dom';
+import { BannerSecundario } from '../Banners';
 import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
 import ImageCarousel from '../ImageCarousel';
 import InfoAbout from './../InfoAbout/index';
@@ -20,7 +20,7 @@ function About() {
                 <InfoAbout />
             </div>
         </>
-    )
+    );
 };
 
 export default About;

@@ -15,6 +15,7 @@ function ImageCarousel() {
             isIntrinsicHeight={true}
             currentSlide={0}
             isPlaying
+            interval={2000}
                 >
                 <Slider>
                     <Slide index={0}><img className="carousel__img" src={img1} alt="Imagem carrousel" /></Slide>
@@ -24,7 +25,6 @@ function ImageCarousel() {
                 </Slider>
             </CarouselProvider>
         </div>
-
     );
 };
 

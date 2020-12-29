@@ -37,7 +37,25 @@
         .order__option {
             background: #ffffff;
         }
-
     }
 }
 
+@media #{$mq-desktop} {
+    .order {
+        margin: 1rem 4rem;
+    }
+
+}
+
+@media #{$mq-mobile} {
+    .order {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+
+        .order__select {
+            margin: 0.5rem;
+        }
+    }
+}

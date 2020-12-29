@@ -1,2 +1,2 @@
 import { BannerPrincipal, BannerSecundario } from './Banner';
-export { BannerPrincipal, BannerSecundario }
+export { BannerPrincipal, BannerSecundario };
