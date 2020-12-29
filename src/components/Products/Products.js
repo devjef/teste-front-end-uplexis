@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function Products({ categoryActive }) {
+function Products({ categoryActive, myRef }) {
 
     const [order, setOrder] = useState('lancamentos');
     const [products, setProducts] = useState([
@@ -132,7 +132,7 @@ function Products({ categoryActive }) {
     return (
         <>
             <SelectOrder handleChangeOrder={handleChangeOrder} orderValue={order} />
-            <div className="products" >
+            <div className="products" ref={myRef}>
                 {
                     products
                         .filter(product => categoryActive === 'todos' ? product : product.category === categoryActive)

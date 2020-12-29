@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BannerSecundario } from '../Banners';
 import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
@@ -6,9 +6,19 @@ import ImageCarousel from '../ImageCarousel';
 import InfoAbout from './../InfoAbout/index';
 
 function About() {
+    const myRef = React.createRef();
+
+    const handleClickToScroll = (ref) => {
+      ref.current.scrollIntoView({behavior: 'smooth'})
+    };
+
+    useEffect(() => {
+        handleClickToScroll(myRef);
+    });
+
     return (
         <>
-            <BannerSecundario />
+            <BannerSecundario myRef={myRef} />
             <div className="container">
                 <Link to="/" >
                     <div className="page-back">

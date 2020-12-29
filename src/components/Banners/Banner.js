@@ -10,9 +10,9 @@ function BannerPrincipal() {
     );
 };
 
-function BannerSecundario() {
+function BannerSecundario({ myRef }) {
     return(
-        <img src={banner2} alt={altBanner} className="banner" />
+        <img ref={myRef} src={banner2} alt={altBanner} className="banner" />
     );
 };
 

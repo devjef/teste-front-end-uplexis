@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function NavMenu({ categoryFilter }) {
+function NavMenu({ categoryFilter, scrollToTheElement, myRef }) {
 
     const [navItems, setNavItems] = useState([
         {
@@ -80,6 +80,7 @@ function NavMenu({ categoryFilter }) {
     function handleClickNavCard(e) {
         activeItem(e);
         categoryFilter(e);
+        scrollToTheElement(myRef);
     };
 
     function activeItem(e) {

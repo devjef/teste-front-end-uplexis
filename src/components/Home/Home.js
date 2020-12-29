@@ -5,6 +5,11 @@ import NavMenu from './../NavMenu';
 import Products from './../Products';
 
 function Home() {
+  const myRef = React.createRef();
+
+  const handleClickToScroll = (ref) => {
+    ref.current.scrollIntoView({behavior: 'smooth'})
+  };
 
   const [categoryActive, setCategoryActive] = useState('todos');
 
@@ -19,8 +24,8 @@ function Home() {
         <BannerPrincipal />
       </Link>
       <div className="container">
-        <NavMenu categoryFilter={categoryFilter} />
-        <Products categoryActive={categoryActive} />
+        <NavMenu categoryFilter={categoryFilter} scrollToTheElement={handleClickToScroll} myRef={myRef} />
+        <Products myRef={myRef} categoryActive={categoryActive} />
       </div>
     </>
   );
