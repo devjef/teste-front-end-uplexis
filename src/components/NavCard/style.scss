@@ -1,17 +1,16 @@
 @import '../../assets/scss/helpers/variables.scss';
+@import '../../assets/scss/helpers/mixin.scss';
 
 .nav__item {
 
+    @include flex-center;
     background-color: $grey-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
     border: 1px solid #fff;
+    flex-direction: column;
+    height: 100px;
+    padding: 1rem;
     text-align: center;
     width: 10%;
-    height: 100px;
 
     &:hover {
         cursor: pointer;
@@ -28,23 +27,23 @@
     .nav__icon {
         color: $secondary-color;
         height: 20px;
-        width: 20px;
         pointer-events: none;
+        width: 20px;
     }
 
     .nav__text {
         color: $secondary-color;
-        margin-bottom: 0;
         font-size: 14px;
+        margin-bottom: 0;
         pointer-events: none;
     }
 }
 
 .nav__item--active {
     background-color: $primary-color;
-    padding: 1.1rem;
     border: 1px solid $primary-color;
     border-radius: 5px !important;
+    padding: 1.1rem;
    
 
     .nav__icon {
@@ -58,19 +57,19 @@
 
 @media #{$mq-desktop} {
     .nav__item {
-        width: 25%;
         max-width: 119px;
+        width: 25%;
     }
 }
 
 @media #{$mq-mobile} {
 
     .nav__item {
-        width: 50%;
-        min-width: 116px;
+        border-radius: 5px;
         height: 20px;
         margin: 5px;
-        border-radius: 5px;
+        min-width: 116px;
+        width: 50%;
 
         .nav__icon {
             display: none;
@@ -81,5 +80,4 @@
             white-space: nowrap;
         }
     }
-   
 };

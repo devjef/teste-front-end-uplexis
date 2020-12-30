@@ -2,17 +2,17 @@
 @import "../../assets/scss/helpers/mixin.scss";
 
 .page-back {
-  display: flex;
   align-items: center;
+  cursor: pointer;
+  display: flex;
   justify-content: flex-start;
   margin: 1rem;
-  cursor: pointer;
 
   .page-back__icon {
     color: $primary-color;
     margin-right: 0.3rem;
-    width: 15px;
     height: 15px;
+    width: 15px;
   }
 
   .page-back__text {
@@ -30,9 +30,9 @@
 }
 
 .content-footer {
+  align-items: center;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   padding: 0 1rem;
 
   .content-footer__price {
@@ -45,15 +45,15 @@
   }
 
   .content-footer__button {
-    padding: 1.1rem;
-    border-radius: 5px;
-    margin: 1rem;
-    width: auto;
-    height: 10px;
     @include btn-background;
-    display: flex;
     align-items: center;
+    border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    margin: 1rem;
+    height: 10px;
+    padding: 1.1rem;
+    width: auto;
 
     .content-footer__text {
       color: white;

@@ -4,3 +4,9 @@
     background-color: $primary-color;
     background-image: $background-primary;
 };
+
+@mixin flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+};

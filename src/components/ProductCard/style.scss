@@ -2,28 +2,24 @@
 @import "../../assets/scss/helpers/mixin.scss";
 
 .products__card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
+    @include flex-center;
+    border: 1px solid $grey-color;
+    border-radius: 5px;
     height: 300px;
     margin: 20px 30px;
     padding: 0;
-    border: 1px solid $grey-color;
-    border-radius: 5px;
     position: relative;
+    width: 20%;
 
     .products__body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         flex-direction: column;
         margin-bottom: 50px;
 
         .products__icon {
             color: $primary-color;
-            width: 40px;
             height: 40px;
+            width: 40px;
         }
 
         .products__title {
@@ -40,17 +36,17 @@
     }
 
     .products__footer {
-        display: flex;
+        @include btn-background;
         align-items: center;
+        display: flex;
+        border-radius: 0 0 5px 5px;
+        bottom: 0;
+        height: 50px;
         justify-content: space-between;
         padding: 10px;
         position: absolute;
-        @include btn-background;
         width: 100%;
-        height: 50px;
-        bottom: 0;
-        border-radius: 0 0 5px 5px;
-
+        
         .products__price {
             color: white;
             margin: 0%;
@@ -65,12 +61,12 @@
 
 @media #{$mq-desktop} {
     .products__card {
-        width: 30%;
         height: 300px;
-        padding: 0;
+        margin: 10px 20px;
         min-width: 250px;
         max-width: 300px;
-        margin: 10px 20px;
+        padding: 0;
+        width: 30%;
     }
 }
 
