@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ProductCard({ icon, title, text, price }) {
+const ProductCard = ({ icon, title, text, price }) => {
     return (
         <div className="products__card">
             <div className="products__body">

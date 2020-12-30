@@ -1,6 +1,6 @@
 import React from 'react';
 
-function InfoAbout() {
+const InfoAbout = () => {
     return (
         <>
             <div className="app-description">

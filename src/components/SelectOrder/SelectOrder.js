@@ -1,8 +1,8 @@
 import React from 'react';
 
-function SelectOrder({ handleChangeOrder, orderValue }) {
+const SelectOrder = ({ handleChangeOrder, orderValue }) => {
 
-    function handleChange(e) {
+    const handleChange = (e) => {
         handleChangeOrder(e.target.value)
     };
 

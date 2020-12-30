@@ -4,7 +4,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import img1 from '../../assets/img/in-1.png';
 import img2 from '../../assets/img/in-2.png';
 
-function ImageCarousel() {
+const ImageCarousel = () => {
 
     return (
         <div className="carousel">

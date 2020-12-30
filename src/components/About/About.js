@@ -5,7 +5,7 @@ import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
 import ImageCarousel from '../ImageCarousel';
 import InfoAbout from './../InfoAbout/index';
 
-function About() {
+const About = () => {
     const myRef = React.createRef();
 
     const handleClickToScroll = (ref) => {

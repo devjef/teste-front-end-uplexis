@@ -1,8 +1,8 @@
 import React from 'react';
 
-function NavCard({ icon, title, category, onClick, active, index }) {
+const NavCard = ({ icon, title, category, onClick, active, index }) => {
 
-    function handleClick(e) {
+    const handleClick = (e) => {
         onClick(e)
     };
 

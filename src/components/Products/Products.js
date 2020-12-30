@@ -12,7 +12,7 @@ import { ReactComponent as Gem } from '../../assets/svg/gem-solid.svg';
 import { ReactComponent as Male } from '../../assets/svg/male-solid.svg';
 import { ReactComponent as Piggy } from '../../assets/svg/piggy-bank-solid.svg';
 
-function Products({ categoryActive, myRef }) {
+const Products = ({ categoryActive, myRef }) => {
 
     const [order, setOrder] = useState('lancamentos');
     const [products, setProducts] = useState([
@@ -114,11 +114,7 @@ function Products({ categoryActive, myRef }) {
         }
     ]);
 
-    function handleChangeOrder(orderValue) {
-        orderProducts(orderValue);
-    };
-
-    function orderProducts(orderValue) {
+    const orderProducts = (orderValue) => {
 
         const ordenacao = {
             'lancamentos': () => products.sort((a, b) => (a.id > b.id ? 1 : -1)),
@@ -127,6 +123,10 @@ function Products({ categoryActive, myRef }) {
 
         ordenacao[orderValue]();
         setOrder(orderValue);
+    };
+
+    const handleChangeOrder = (orderValue) => {
+        orderProducts(orderValue);
     };
 
     return (

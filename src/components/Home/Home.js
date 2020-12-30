@@ -4,7 +4,7 @@ import { BannerPrincipal } from './../Banners';
 import NavMenu from './../NavMenu';
 import Products from './../Products';
 
-function Home() {
+const Home = () => {
   const myRef = React.createRef();
 
   const handleClickToScroll = (ref) => {
@@ -13,7 +13,7 @@ function Home() {
 
   const [categoryActive, setCategoryActive] = useState('todos');
 
-  function categoryFilter(e) {
+  const categoryFilter = (e) => {
     const category = e.target.getAttribute('id');
     setCategoryActive(category);
   };
