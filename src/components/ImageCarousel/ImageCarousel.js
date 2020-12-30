@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import img1 from '../../assets/img/in-1.png';
@@ -6,10 +6,17 @@ import img2 from '../../assets/img/in-2.png';
 
 const ImageCarousel = () => {
 
+    const [visibleSlides, setVisibleSlides] = useState(2)
+
+    window.addEventListener('resize', () => {
+        const windowWidth = window.innerWidth;
+        windowWidth <= 768 ? setVisibleSlides(1) : setVisibleSlides(2);
+    });
+
     return (
         <div className="carousel">
             <CarouselProvider 
-            visibleSlides={2}
+            visibleSlides={visibleSlides}
             totalSlides={4}
             naturalSlideWidth={400}
             isIntrinsicHeight={true}
