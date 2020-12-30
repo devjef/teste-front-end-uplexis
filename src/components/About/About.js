@@ -6,18 +6,22 @@ import ImageCarousel from '../ImageCarousel';
 import InfoAbout from './../InfoAbout/index';
 
 const About = () => {
-    const myRef = React.createRef();
+    const myRef = React.createRef(null);
 
-    const handleClickToScroll = (ref) => {
-      ref.current.scrollIntoView({behavior: 'smooth'})
-    };
+    const toTop = () => {
+        window.scroll({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+    }
 
     useEffect(() => {
-        handleClickToScroll(myRef);
+        toTop();
     });
 
     return (
-        <>
+        <>  
             <BannerSecundario myRef={myRef} />
             <div className="container">
                 <Link to="/" >

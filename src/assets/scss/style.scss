@@ -9,7 +9,11 @@
 @import '../../components/ImageCarousel/style.scss';
 @import '../../components/InfoAbout/style.scss';
 
-.container {
-    margin: 0 1rem;
-};
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 
+    .container {
+        margin: 0 1rem;
+    };  
+};
