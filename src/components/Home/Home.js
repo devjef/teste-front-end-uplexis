@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { BannerPrincipal } from './../Banners';
 import NavMenu from './../NavMenu';
 import Products from './../Products';
@@ -20,9 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <Link to="/saiba-mais">
-        <BannerPrincipal />
-      </Link>
+      <BannerPrincipal />
       <div className="container">
         <NavMenu categoryFilter={categoryFilter} scrollToTheElement={handleClickToScroll} myRef={myRef} />
         <Products myRef={myRef} categoryActive={categoryActive} />
